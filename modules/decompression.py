@@ -5,7 +5,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 # Local
-import utils
+from DiffJPEG import utils
 
 
 class y_dequantize(nn.Module):
@@ -157,7 +157,6 @@ class decompress_jpeg(nn.Module):
         self.colors = ycbcr_to_rgb_jpeg()
         
         self.height, self.width = height, width
-        
     def forward(self, y, cb, cr):
         components = {'y': y, 'cb': cb, 'cr': cr}
         for k in components.keys():
