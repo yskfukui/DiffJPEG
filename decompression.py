@@ -11,7 +11,7 @@ import numpy as np
 # PyTorch
 import torch
 # Local
-import utils
+from . import utils
 
 
 def y_dequantize(image, factor=1):
